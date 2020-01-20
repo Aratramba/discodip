@@ -25,6 +25,9 @@ test("get components height", async t => {
           });
 
           puppet.send({
+            screenshot: true,
+            path: "/test/tmp/",
+            file: `222.html`,
             url: "http://localhost:3000/fixtures/222.html"
           });
         }

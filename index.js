@@ -25,7 +25,8 @@ function build(config) {
       headHtml: "",
       bodyHtml: "",
       prerender: null,
-      onComplete: null
+      onComplete: null,
+      screenshot: false
     },
     config
   );
