@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "ava test/*.js --serial --verbose",
-    "prepublishOnly": "npm test",
-    "precommit": "pretty-quick --staged"
+    "prepublishOnly": "npm test"
   },
   "repository": {
     "type": "git",
@@ -27,19 +26,17 @@
   },
   "homepage": "https://github.com/EightMedia/discodip#readme",
   "devDependencies": {
-    "ava": "^3.2.0",
-    "husky": "^0.14.3",
-    "prettier": "^1.14.2",
-    "pretty-quick": "^1.6.0"
+    "ava": "^3.8.2",
+    "prettier": "^2.0.5"
   },
   "dependencies": {
     "death": "^1.1.0",
-    "finalhandler": "^1.1.1",
-    "killable": "^1.0.0",
-    "mkdirp": "^0.5.1",
-    "puppeteer": "^2.1.1",
-    "rimraf": "^2.6.2",
-    "serve-static": "^1.13.2",
-    "signale": "^1.2.1"
+    "finalhandler": "^1.1.2",
+    "killable": "^1.0.1",
+    "mkdirp": "^1.0.4",
+    "puppeteer": "^3.0.4",
+    "rimraf": "^3.0.2",
+    "serve-static": "^1.14.1",
+    "signale": "^1.4.0"
   }
 }
