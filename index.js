@@ -25,7 +25,7 @@ function build(config) {
       headHtml: "",
       bodyHtml: "",
       prerender: null,
-      onComplete: null
+      onComplete: null,
     },
     config
   );
@@ -48,7 +48,7 @@ function build(config) {
   const paths = {
     output: path.resolve(options.output),
     components: path.resolve(options.components),
-    config: path.resolve(options.output, ".config.json")
+    config: path.resolve(options.output, ".config.json"),
   };
 
   // check if previous configuration exists
@@ -78,19 +78,19 @@ function build(config) {
     [
       JSON.stringify({
         options: options,
-        paths: paths
-      })
+        paths: paths,
+      }),
     ],
     {
-      silent: true
+      silent: true,
     }
   );
 
-  renderer.stderr.on("data", err => {
+  renderer.stderr.on("data", (err) => {
     signale.error(`\n${err}`);
   });
 
-  renderer.on("message", message => {
+  renderer.on("message", (message) => {
     if (message === true) {
       renderer.kill();
       renderer = null;

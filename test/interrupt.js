@@ -6,7 +6,7 @@ const OUTPUT = "test/tmp/interrupt/";
 
 rimraf.sync(OUTPUT);
 
-test("prerender", async t => {
+test("prerender", async (t) => {
   return new Promise((resolve, reject) => {
     build({
       silent: true,
@@ -16,7 +16,7 @@ test("prerender", async t => {
       onComplete: () => {
         t.fail();
         reject();
-      }
+      },
     });
 
     setTimeout(() => {
@@ -28,7 +28,7 @@ test("prerender", async t => {
         onComplete: () => {
           t.fail();
           reject();
-        }
+        },
       });
     }, 250);
 
@@ -41,7 +41,7 @@ test("prerender", async t => {
         onComplete: () => {
           t.pass();
           resolve();
-        }
+        },
       });
     }, 500);
   });

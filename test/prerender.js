@@ -8,7 +8,7 @@ const OUTPUT = "test/tmp/prerender/";
 
 rimraf.sync(OUTPUT);
 
-test("prerender", async t => {
+test("prerender", async (t) => {
   return new Promise((resolve, reject) => {
     const renderer = cp.fork(
       "lib/render.js",
@@ -21,20 +21,20 @@ test("prerender", async t => {
             prerender: {
               port: 3000,
               path: "test/tmp/prerender",
-              serveFolder: ""
-            }
+              serveFolder: "",
+            },
           },
           paths: {
             output: path.resolve(OUTPUT),
             components: path.resolve("test/fixtures/components.json"),
-            config: path.resolve("test/tmp/prerender/.config.json")
-          }
-        })
+            config: path.resolve("test/tmp/prerender/.config.json"),
+          },
+        }),
       ],
       { silent: true }
     );
 
-    renderer.on("message", message => {
+    renderer.on("message", (message) => {
       if (message === true) {
         renderer.kill();
         resolve();

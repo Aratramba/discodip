@@ -6,43 +6,43 @@ const OUTPUT = "test/tmp/config/";
 
 rimraf.sync(OUTPUT);
 
-test("options.output is required", t => {
+test("options.output is required", (t) => {
   const error = t.throws(
     () => {
       build({
-        silent: true
+        silent: true,
       });
     },
     { message: "options.output is required" }
   );
 });
 
-test("options.components is required", t => {
+test("options.components is required", (t) => {
   const error = t.throws(
     () => {
       build({
         silent: true,
-        output: OUTPUT
+        output: OUTPUT,
       });
     },
     { message: "options.components is required" }
   );
 });
 
-test("components JSON not found", t => {
+test("components JSON not found", (t) => {
   const error = t.throws(
     () => {
       build({
         silent: true,
         output: OUTPUT,
-        components: "test/fixtures/components--.json"
+        components: "test/fixtures/components--.json",
       });
     },
     { message: "Components file not found test/fixtures/components--.json" }
   );
 });
 
-test("complete", async t => {
+test("complete", async (t) => {
   return new Promise((resolve, reject) => {
     build({
       silent: true,
@@ -53,7 +53,7 @@ test("complete", async t => {
       onComplete: () => {
         t.pass();
         resolve();
-      }
+      },
     });
   });
 });

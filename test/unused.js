@@ -7,7 +7,7 @@ const OUTPUT = "test/tmp/unused/";
 
 rimraf.sync(OUTPUT);
 
-test("remove unused items", async t => {
+test("remove unused items", async (t) => {
   return new Promise((resolve, reject) => {
     build({
       silent: true,
@@ -49,9 +49,9 @@ test("remove unused items", async t => {
             );
 
             resolve();
-          }
+          },
         });
-      }
+      },
     });
   });
 });

@@ -7,7 +7,7 @@ const OUTPUT = "test/tmp/fragments/";
 
 rimraf.sync(OUTPUT);
 
-test("render fragments", async t => {
+test("render fragments", async (t) => {
   return new Promise((resolve, reject) => {
     build({
       silent: true,
@@ -40,7 +40,7 @@ test("render fragments", async t => {
         );
 
         resolve();
-      }
+      },
     });
   });
 });

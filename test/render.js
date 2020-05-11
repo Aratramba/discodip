@@ -7,7 +7,7 @@ const OUTPUT = "test/tmp/render/";
 
 rimraf.sync(OUTPUT);
 
-test("basic render", async t => {
+test("basic render", async (t) => {
   return new Promise((resolve, reject) => {
     build({
       silent: true,
@@ -81,7 +81,7 @@ test("basic render", async t => {
           }
           resolve();
         }, 2000);
-      }
+      },
     });
   });
 });
