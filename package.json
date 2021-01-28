@@ -1,6 +1,6 @@
 {
   "name": "discodip",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "Embeddable HTML components generator.",
   "main": "index.js",
   "scripts": {
